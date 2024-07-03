@@ -1,4 +1,3 @@
-import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
   IsNotEmpty,
@@ -7,6 +6,8 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
+
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateArticleDto {
   @IsString()
