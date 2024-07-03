@@ -48,7 +48,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.colorTheme": "Origamid Next",
-  "workbench.iconTheme": "origamid-next-icons",
+  "workbench.iconTheme": "ayu",
   "workbench.startupEditor": "none",
   "workbench.statusBar.visible": true,
   "[html]": {
