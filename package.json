@@ -19,9 +19,12 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "db:seed": "prisma db seed",
+    "db:pull": "prisma db pull",
+    "db:push": "prisma db push",
     "migrate:dev": "prisma migrate dev",
-    "docker:start": "service docker start",
-    "docker:up": "docker-compose up -d"
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:start": "service docker start"
   },
   "dependencies": {
     "@nestjs/common": "^10.3.10",
