@@ -1,8 +1,8 @@
 # docker-compose.yml
 
 version: '3.8'
-services:
 
+services:
   postgres:
     image: postgres:13.5
     restart: always
@@ -16,3 +16,21 @@ services:
 
 volumes:
   postgres:
+
+# version: '3.8'
+
+# services:
+#   mongo:
+#     image: mongo:latest
+#     restart: always
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - mongo:/var/lib/mongodb/data
+#       - ./data:/data/db
+#     environment:
+#       MONGO_INITDB_ROOT_USERNAME: myuser
+#       MONGO_INITDB_ROOT_PASSWORD: mypassword
+
+# volumes:
+#   mongo:
