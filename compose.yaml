@@ -1,30 +1,40 @@
-# docker-compose.yml
-
-version: '3.8'
-
 services:
-  postgres:
-    image: postgres:16.3-alpine3.20
-    restart: always
+  mongodb-primary:
+    image: bitnami/mongodb:latest
     environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
+      MONGODB_ADVERTISED_HOSTNAME: mongodb-primary
+      MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MONGODB_REPLICA_SET_KEY: ${DATABASE_REPLICA_SET_KEY}
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - 'mongodb_master_data:/bitnami'
     ports:
-      - '5432:5432'
+      - 27017:27017
 
-  # mongo:
-  #   image: mongo:latest
-  #   restart: always
-  #   ports:
-  #     - "27017:27017"
-  #   volumes:
-  #     - mongo:/var/lib/mongodb/data
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: myuser
-  #     MONGO_INITDB_ROOT_PASSWORD: mypassword
+  mongodb-secondary:
+    image: bitnami/mongodb:latest
+    depends_on:
+      - mongodb-primary
+    environment:
+      MONGODB_ADVERTISED_HOSTNAME: mongodb-secondary
+      MONGODB_REPLICA_SET_MODE: secondary
+      MONGODB_INITIAL_PRIMARY_HOST: mongodb-primary
+      MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
+      MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MONGODB_REPLICA_SET_KEY: ${DATABASE_REPLICA_SET_KEY}
+
+  mongodb-arbiter:
+    image: bitnami/mongodb:latest
+    depends_on:
+      - mongodb-primary
+    environment:
+      MONGODB_ADVERTISED_HOSTNAME: mongodb-arbiter
+      MONGODB_REPLICA_SET_MODE: arbiter
+      MONGODB_INITIAL_PRIMARY_HOST: mongodb-primary
+      MONGODB_INITIAL_PRIMARY_PORT_NUMBER: 27017
+      MONGODB_INITIAL_PRIMARY_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MONGODB_REPLICA_SET_KEY: ${DATABASE_REPLICA_SET_KEY}
 
 volumes:
-  postgres:
-  # mongo:
+  mongodb_master_data:
+    driver: local

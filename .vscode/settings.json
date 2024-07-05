@@ -1,5 +1,34 @@
 {
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "breadcrumbs.enabled": true,
+  "code-runner.enableAppInsights": false,
   "cSpell.language": "en,lorem,pt-br",
   "debug.openDebug": "openOnDebugBreak",
   "editor.acceptSuggestionOnEnter": "on",
@@ -37,42 +66,22 @@
   "git.mergeEditor": false,
   "git.suggestSmartCommit": false,
   "githubPullRequests.pullBranch": "never",
+  "gitlens.telemetry.enabled": false,
   "html.autoClosingTags": true,
   "html.format.wrapAttributes": "auto",
   "html.format.wrapLineLength": 0,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "mdb.sendTelemetry": false,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
+  "redhat.telemetry.enabled": false,
   "remote.autoForwardPortsSource": "hybrid",
-  "terminal.integrated.fontSize": 16,
+  "rest-client.enableTelemetry": false,
+  "terminal.integrated.fontSize": 14,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.colorTheme": "Origamid Next",
-  "workbench.iconTheme": "ayu",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true,
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[prisma]": {
-    "editor.defaultFormatter": "Prisma.prisma"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.statusBar.visible": true
 }

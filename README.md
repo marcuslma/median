@@ -2,7 +2,7 @@
 
 - NestJS as the backend framework
 - Prisma as the Object-Relational Mapper (ORM)
-- PostgreSQL as the database
+- MongoDB as the database
 - Docker as the database container
 - Swagger as the API documentation tool
 - JWT and Passport as the authenticators
